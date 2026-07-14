@@ -1,4 +1,4 @@
-# Figma Sample Component Library
+# One-UI Component Library
 
 A React component library scaffolded from Figma-derived sample components with Storybook for local development and documentation.
 
@@ -61,8 +61,8 @@ npm run build-storybook
 Install the package in your app, then import components and styles.
 
 ```tsx
-import "figma-sample-component-library/styles.css";
-import { Button, Heading, Text } from "figma-sample-component-library";
+import "one-ui-component-library/styles.css";
+import { Button, Heading, Text } from "one-ui-component-library";
 
 export function Example() {
   return (
@@ -137,7 +137,7 @@ git push origin main --follow-tags
 5. Verify package version on npm:
 
 ```bash
-npm view figma-sample-component-library version
+npm view one-ui-component-library version
 ```
 
 Optional manual publish trigger:

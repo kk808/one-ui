@@ -1,7 +1,7 @@
 {
-  "name": "figma-sample-component-library",
+  "name": "one-ui-component-library",
   "version": "0.1.0",
-  "description": "React component library generated from Figma samples with Storybook demos.",
+  "description": "One-UI React component library",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
