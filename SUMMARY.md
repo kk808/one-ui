@@ -1,0 +1,30 @@
+# Project Setup Summary
+
+- Restructured the project into a component-library layout under src/ to make code organization and exports scalable.
+- Moved sample components into src/components/Button and src/components/Typography to establish reusable module boundaries.
+- Added src/index.ts as the library entrypoint to centralize all component and type exports.
+- Kept root-level sample files and routed root index.ts to src for compatibility with existing references.
+- Added src/styles/index.css with Tailwind directives so component styles can be bundled and consumed.
+- Added Storybook config in .storybook/main.ts and .storybook/preview.ts to enable interactive component documentation.
+- Created Button and Typography stories to demo variants, sizes, states, and text styles in Storybook.
+- Added tsconfig.json to enable strict TypeScript checking and declaration generation for library consumers.
+- Added postcss.config.js so Tailwind and autoprefixer run correctly in the build toolchain.
+- Updated tailwind.config.js content paths to include src and .storybook so all utility classes are detected.
+- Upgraded package.json to a publishable library package with main/module/types fields and proper exports.
+- Added build, watch, typecheck, storybook, and build-storybook scripts for local development and CI usage.
+- Added peerDependencies for react and react-dom to prevent duplicate React copies in consuming apps.
+- Added devDependencies for TypeScript, tsup, Tailwind, PostCSS, and Storybook to support build and docs workflows.
+- Resolved Storybook dependency conflicts by pinning Storybook packages to one exact version for reliable installs.
+- Fixed package entry mappings to dist/index.mjs and dist/index.js so imports and requires resolve correctly.
+- Imported library CSS from src/index.ts so tsup emits dist/index.css for downstream usage.
+- Installed dependencies and validated the setup with typecheck, library build, and Storybook static build.
+- Generated dist artifacts (JS, types, CSS) to confirm the package output shape is correct.
+- Added README.md with install, usage, scripts, structure, and export-surface documentation for consumers.
+- Added release checklist to README.md so versioning and publish steps are standardized.
+- Extended README release notes with patch/minor/major guidance to clarify semantic version decisions.
+- Added Conventional Commits to semver mapping in README to align commit intent with release type.
+- Fixed README formatting for the multiline BREAKING CHANGE example to improve readability.
+- Added GitHub Actions CI workflow in .github/workflows/ci.yml to run npm ci, typecheck, build, and Storybook build on PR/push.
+- Added GitHub Actions publish workflow in .github/workflows/publish.yml for manual or tag-based npm publishing.
+- Configured publish workflow to use NPM_TOKEN and npm provenance for secure, auditable package releases.
+- Stored repository memory notes about version pinning and output conventions to avoid repeating setup mistakes.
