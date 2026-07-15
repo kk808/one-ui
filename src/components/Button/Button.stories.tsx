@@ -25,7 +25,8 @@ const meta: Meta<typeof Button> = {
 export default meta;
 type Story = StoryObj<typeof Button>;
 
-export const Playground: Story = {
+export const PrimaryButton: Story = {
+  tags: ["!dev"],
   args: {
     children: "Button",
     variant: "primary",
@@ -35,12 +36,17 @@ export const Playground: Story = {
   },
 };
 
-makeLiveEditStory(Playground, {
+export const LiveEditor: Story = {
+  tags: ["!autodocs"],
+};
+
+makeLiveEditStory(LiveEditor, {
   code: playgroundSource,
   availableImports: { "./Button": { Button }, "../Typography": { Heading } },
 });
 
 export const AllVariants: Story = {
+  tags: ["!dev"],
   render: () => (
     <div className="flex flex-col gap-3 min-w-[360px]">
       <div className="flex gap-3">
