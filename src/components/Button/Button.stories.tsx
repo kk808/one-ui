@@ -1,5 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import { makeLiveEditStory } from "storybook-addon-code-editor";
 import { Button } from "./Button";
+import { Heading } from "../Typography";
+import playgroundSource from "./Button.playground.source.tsx?raw";
 
 const meta: Meta<typeof Button> = {
   title: "Components/Button",
@@ -31,6 +34,11 @@ export const Playground: Story = {
     disabled: false,
   },
 };
+
+makeLiveEditStory(Playground, {
+  code: playgroundSource,
+  availableImports: { "./Button": { Button }, "../Typography": { Heading } },
+});
 
 export const AllVariants: Story = {
   render: () => (

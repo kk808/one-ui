@@ -60,6 +60,7 @@
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.49",
     "storybook": "8.6.18",
+    "storybook-addon-code-editor": "4.1.2",
     "tailwindcss": "^3.4.16",
     "tsup": "^8.3.5",
     "typescript": "^5.7.2"
