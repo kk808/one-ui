@@ -15,7 +15,15 @@ const config: StorybookConfig = {
   docs: {
     autodocs: "tag",
   },
-  staticDirs: [...getCodeEditorStaticDirs(__filename)],
+  staticDirs: [
+    ...getCodeEditorStaticDirs(__filename),
+    { from: "./assets", to: "/" },
+  ],
+  managerHead: (head) => `
+    ${head}
+    <link rel="icon" type="image/svg+xml" href="./logo.svg" />
+    <link rel="shortcut icon" href="./logo.svg" />
+  `,
 };
 
 export default config;
