@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project
 
-A React component library generated from a Figma "Design System (Community)" file, published to npm as `one-ui-component-library` (One-UI), with Storybook for interactive documentation. Components (`Button`, `Heading`, `Text`) are direct translations of Figma component sets — variant/size/state props map 1:1 to Figma component properties (see comments in `Button.tsx` / `Typography.tsx` for the exact node IDs and mappings).
+A React component library generated from a Figma "Design System (Community)" file, published to npm as `@kk88/one-ui` (One-UI), with Storybook for interactive documentation. Components (`Button`, `Heading`, `Text`) are direct translations of Figma component sets — variant/size/state props map 1:1 to Figma component properties (see comments in `Button.tsx` / `Typography.tsx` for the exact node IDs and mappings).
 
 ## Commands
 

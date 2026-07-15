@@ -61,8 +61,8 @@ npm run build-storybook
 Install the package in your app, then import components and styles.
 
 ```tsx
-import "one-ui-component-library/styles.css";
-import { Button, Heading, Text } from "one-ui-component-library";
+import "@kk88/one-ui/styles.css";
+import { Button, Heading, Text } from "@kk88/one-ui";
 
 export function Example() {
   return (
@@ -137,7 +137,7 @@ git push origin main --follow-tags
 5. Verify package version on npm:
 
 ```bash
-npm view one-ui-component-library version
+npm view @kk88/one-ui version
 ```
 
 Optional manual publish trigger:
