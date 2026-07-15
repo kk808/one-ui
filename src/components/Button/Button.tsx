@@ -14,7 +14,7 @@ export interface ButtonProps
 }
 
 const baseClasses =
-  "inline-flex items-center justify-center gap-2 rounded-button font-sans transition-colors " +
+  "inline-flex self-center items-center justify-center gap-2 rounded-button font-sans transition-colors " +
   "disabled:cursor-not-allowed focus-visible:outline-none";
 
 const sizeClasses: Record<ButtonSize, string> = {
