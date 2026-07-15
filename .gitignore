@@ -5,6 +5,7 @@ node_modules/
 dist/
 storybook-static/
 coverage/
+pack-output/
 
 # Logs
 npm-debug.log*

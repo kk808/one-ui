@@ -21,6 +21,7 @@ A React component library scaffolded from Figma-derived sample components with S
 │  └─ index.ts
 ├─ tailwind.config.js
 ├─ postcss.config.js
+├─ tsup.config.ts
 └─ tsconfig.json
 ```
 
@@ -56,6 +57,19 @@ Build Storybook static output:
 npm run build-storybook
 ```
 
+Build a local publish tarball (for testing the package in another project before publishing):
+
+```bash
+npm run pack:local
+```
+
+This builds the library and runs `npm pack`, writing `kk88-one-ui-<version>.tgz` to
+`pack-output/` (gitignored). Install it in a test project with:
+
+```bash
+npm install /path/to/one-ui/pack-output/kk88-one-ui-<version>.tgz
+```
+
 ## Library Usage
 
 Install the package in your app, then import components and styles.
@@ -75,16 +89,34 @@ export function Example() {
 }
 ```
 
+### Per-component imports (tree-shaking)
+
+Each component also has its own subpath export, built as a standalone bundle. Importing from a
+subpath guarantees only that component's code is included, even for consumers/bundlers that don't
+tree-shake the main barrel (e.g. plain CJS `require`):
+
+```tsx
+import { Button } from "@kk88/one-ui/button";
+import { Heading, Text } from "@kk88/one-ui/typography";
+```
+
+Importing from the root `@kk88/one-ui` entrypoint still works and is tree-shaken by modern
+bundlers (webpack, Rollup, esbuild, Vite) since the package sets `"sideEffects"` correctly; the
+subpaths above are for guaranteed isolation regardless of bundler.
+
 ## Export Surface
 
-- `Button`
-- `Heading`
-- `Text`
+- `.` — `Button`, `Heading`, `Text` (barrel)
+- `./button` — `Button` only
+- `./typography` — `Heading`, `Text` only
+- `./styles.css` — compiled Tailwind output
 - Types from each component (`ButtonProps`, `HeadingProps`, `TextProps`, etc.)
 
 ## Notes
 
 - Build output is generated into `dist/` with ESM, CJS, type declarations, and CSS.
+- `tsup.config.ts` defines three entry points (`index`, `button`, `typography`) so each component
+  compiles to its own standalone file in `dist/`; add new components there as they're added.
 - Tailwind tokens are configured in `tailwind.config.js` and consumed by components.
 
 ## Release Checklist
