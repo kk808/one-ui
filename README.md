@@ -1,6 +1,6 @@
 # One-UI Component Library
 
-A React component library scaffolded from Figma-derived sample components with Storybook for local development and documentation.
+[React UI component library](https://kk808.github.io/one-ui/).
 
 ## Included Components
 
@@ -62,6 +62,12 @@ Build a local publish tarball (for testing the package in another project before
 ```bash
 npm run pack:local
 ```
+
+## Storybook documentation site
+
+Storybook is deployed to GitHub Pages automatically on every push to `main` via `.github/workflows/deploy-storybook.yml`, which builds `storybook-static/` and publishes it through `actions/deploy-pages`.
+
+One-time setup (repo owner): in GitHub repo Settings → Pages, set **Source** to "GitHub Actions". After that, the workflow handles every subsequent deploy — no manual steps needed.
 
 This builds the library and runs `npm pack`, writing `kk88-one-ui-<version>.tgz` to
 `pack-output/` (gitignored). Install it in a test project with:
