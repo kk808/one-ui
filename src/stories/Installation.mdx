@@ -1,0 +1,39 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Installation" />
+
+# Installation
+
+Add One-UI to React web app:
+
+```bash
+npm i @kk88/one-ui
+```
+
+## Usage
+
+Import the stylesheet once (e.g. in your app's entry point), then import components as needed:
+
+```tsx
+import "@kk88/one-ui/styles.css";
+import { Button, Heading, Text } from "@kk88/one-ui";
+
+export function Example() {
+  return (
+    <div>
+      <Heading level={2}>Hello</Heading>
+      <Text size={2}>Component library example.</Text>
+      <Button variant="primary">Click me</Button>
+    </div>
+  );
+}
+```
+
+### Individual component imports
+
+Each component also has its own subpath export, built as a standalone bundle, for projects that want to import a single component without pulling in the rest of the library:
+
+```tsx
+import { Button } from "@kk88/one-ui/button";
+import { Heading, Text } from "@kk88/one-ui/typography";
+```

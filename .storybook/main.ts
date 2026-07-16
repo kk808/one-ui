@@ -2,7 +2,7 @@ import type { StorybookConfig } from "@storybook/react-vite";
 import { getCodeEditorStaticDirs } from "storybook-addon-code-editor/getStaticDirs";
 
 const config: StorybookConfig = {
-  stories: ["../src/**/*.stories.@(ts|tsx|mdx)"],
+  stories: ["../src/**/*.mdx", "../src/**/*.stories.@(ts|tsx)"],
   addons: [
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",

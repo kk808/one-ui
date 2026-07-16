@@ -12,7 +12,7 @@ const preview: Preview = {
     layout: "centered",
     options: {
       storySort: {
-        order: ["Components", ["Button", "Typography"]],
+        order: ["Installation", "Components", ["Button", "Typography"]],
       },
     },
   },
