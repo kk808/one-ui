@@ -95,6 +95,21 @@ export function Example() {
 }
 ```
 
+### Dark mode
+
+Dark mode is class-based: components render their dark styles whenever a `dark` class is present
+on `<html>` (or any ancestor element). Toggle it however your app manages themes, e.g.:
+
+```tsx
+// enable
+document.documentElement.classList.add("dark");
+// disable
+document.documentElement.classList.remove("dark");
+```
+
+Components only style themselves — set your own page background (e.g. `#212121`) in dark mode.
+In Storybook, use the theme switcher in the toolbar to preview stories in either mode.
+
 ### Per-component imports (tree-shaking)
 
 Each component also has its own subpath export, built as a standalone bundle. Importing from a

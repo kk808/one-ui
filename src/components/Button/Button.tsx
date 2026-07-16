@@ -23,25 +23,41 @@ const sizeClasses: Record<ButtonSize, string> = {
   sm: "px-6 py-2 text-button-sm",
 };
 
+// Dark-mode styles reuse the existing Figma palette (no dark tokens exist in
+// the source file): azure replaces the primary blue for text/borders on dark
+// surfaces, focus rings flip black -> white, and light hover/active surfaces
+// become translucent primary washes.
 const variantClasses: Record<ButtonVariant, string> = {
   primary:
     "bg-primary text-neutral-white " +
     "hover:bg-primary-navy " +
     "active:bg-primary-dark " +
     "focus-visible:bg-primary-navy focus-visible:ring-2 focus-visible:ring-neutral-black focus-visible:ring-offset-0 " +
-    "disabled:bg-primary-light disabled:text-neutral-greyblue",
+    "disabled:bg-primary-light disabled:text-neutral-greyblue " +
+    "dark:focus-visible:ring-neutral-white " +
+    "dark:disabled:bg-neutral-dgrey dark:disabled:text-neutral-grey",
   secondary:
     "bg-neutral-white text-primary border border-primary " +
     "hover:bg-primary-light " +
     "active:bg-primary-sky " +
     "focus-visible:bg-primary-light focus-visible:ring-2 focus-visible:ring-neutral-black focus-visible:ring-offset-0 " +
-    "disabled:border-neutral-greyblue disabled:text-neutral-greyblue disabled:bg-neutral-white",
+    "disabled:border-neutral-greyblue disabled:text-neutral-greyblue disabled:bg-neutral-white " +
+    "dark:bg-transparent dark:text-primary-azure dark:border-primary-azure " +
+    "dark:hover:bg-primary/10 " +
+    "dark:active:bg-primary/20 " +
+    "dark:focus-visible:bg-primary/10 dark:focus-visible:ring-neutral-white " +
+    "dark:disabled:bg-transparent dark:disabled:border-neutral-dgrey dark:disabled:text-neutral-grey",
   tertiary:
     "bg-transparent text-primary " +
     "hover:bg-primary-light " +
     "active:bg-primary-sky " +
     "focus-visible:bg-primary-light focus-visible:ring-2 focus-visible:ring-neutral-black focus-visible:ring-offset-0 " +
-    "disabled:text-neutral-greyblue disabled:bg-transparent",
+    "disabled:text-neutral-greyblue disabled:bg-transparent " +
+    "dark:text-primary-azure " +
+    "dark:hover:bg-primary/10 " +
+    "dark:active:bg-primary/20 " +
+    "dark:focus-visible:bg-primary/10 dark:focus-visible:ring-neutral-white " +
+    "dark:disabled:text-neutral-grey dark:disabled:bg-transparent",
 };
 
 function Spinner({ className = "" }: { className?: string }) {

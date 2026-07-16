@@ -1,0 +1,12 @@
+/* Storybook-only styles (not shipped with the library).
+   Dark canvas surface for the addon-themes "dark" theme — matches the
+   neutral.black token (#212121) from tailwind.config.js. */
+
+html.dark body {
+  background-color: #212121;
+}
+
+/* Story canvases embedded in autodocs pages */
+html.dark .docs-story {
+  background-color: #212121;
+}

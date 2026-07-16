@@ -33,7 +33,7 @@ export function Heading({
   const Tag = as ?? headingTagByLevel[level];
   return (
     <Tag
-      className={["font-sans font-semibold text-neutral-black", headingSizeClasses[level], className]
+      className={["font-sans font-semibold text-neutral-black dark:text-neutral-white", headingSizeClasses[level], className]
         .filter(Boolean)
         .join(" ")}
       {...rest}
@@ -56,10 +56,12 @@ export interface TextProps extends React.HTMLAttributes<HTMLElement> {
   children: React.ReactNode;
 }
 
+// Dark shades shift one step lighter on the neutral ramp so text keeps
+// contrast against the dark (neutral.black) surface.
 const toneClasses: Record<NonNullable<TextProps["tone"]>, string> = {
-  default: "text-neutral-black",
-  grey: "text-neutral-grey",
-  lgrey: "text-neutral-lgrey",
+  default: "text-neutral-black dark:text-neutral-white",
+  grey: "text-neutral-grey dark:text-neutral-lgrey",
+  lgrey: "text-neutral-lgrey dark:text-neutral-greyblue",
 };
 
 export function Text({

@@ -3,7 +3,11 @@ import { getCodeEditorStaticDirs } from "storybook-addon-code-editor/getStaticDi
 
 const config: StorybookConfig = {
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(ts|tsx)"],
-  addons: ["storybook-addon-code-editor", "@storybook/addon-docs"],
+  addons: [
+    "storybook-addon-code-editor",
+    "@storybook/addon-docs",
+    "@storybook/addon-themes",
+  ],
 
   framework: {
     name: "@storybook/react-vite",

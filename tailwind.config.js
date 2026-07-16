@@ -13,6 +13,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}", "./.storybook/**/*.{js,jsx,ts,tsx}"],
+  // Dark mode is class-based: consumers (and Storybook's theme toggle) enable
+  // it by putting a `dark` class on <html> or any ancestor element.
+  darkMode: "class",
   theme: {
     extend: {
       fontFamily: {
