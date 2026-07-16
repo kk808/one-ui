@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { makeLiveEditStory } from "storybook-addon-code-editor";
 import { Button } from "./Button";
 import { Heading } from "../Typography";
