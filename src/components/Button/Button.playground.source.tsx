@@ -7,7 +7,7 @@ export default function Playground() {
   
   return (
     <div className="flex gap-3 flex-col items-center">
-      <Heading level={2}>Headline 1</Heading>
+      <Heading level={2}>Counter</Heading>
 
       <div className="flex gap-3 items-center">
         <Button onClick={() => setCounter(counter - 1)} size="lg" disabled={counter === 0}>
